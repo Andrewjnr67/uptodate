@@ -1,0 +1,40 @@
+{% extends 'meta/base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+        <!-- <div class="col-md-10">
+            <form  method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" value="submit">
+            </form>
+        </div> -->
+
+    </div>
+
+    <div class="row">
+        {% if post_category %}
+        {% for post in post_category %}
+        <div class="col-md-4 mt-4 col-sm">
+            <div class="card " style="width: 100%; ">
+                <img src="{{post.image.url}} " height="300px"/>
+                <div class="card-body">
+                  <h5 class="card-title">{{post.title.capitalize}}</h5>
+                  
+                 
+                    <p><b>written by <i class="fa-solid fa-envelope"></i></b>: {{post.author}}</p>
+                    <p><b>date</b>:{{post.created|timesince}} ago</p>
+                    
+                  <p class="card-text">
+                    {{post.content.capitalize|truncatewords:60}}
+                  </p>
+                  <a href="{% url 'singleblog' post.slug %}" class="btn btn-primary">Read more</a>
+                </div>
+                
+              </div>
+    </div>
+</div>  
+ {% endblock %}

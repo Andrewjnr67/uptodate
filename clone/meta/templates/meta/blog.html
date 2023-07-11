@@ -1,0 +1,144 @@
+{% extends 'meta/base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+
+
+<div class="container-fluid mb-5">
+    <div class="row mb-3">
+      {% for post in posts %}
+        <div class="col-md-4 mt-4 col-sm">
+            <div class="card " style="width: 100%; ">
+                <img src="{{post.image.url}} " height="300px"/>
+                <div class="card-body">
+                  <h5 class="card-title">{{post.title.capitalize}}</h5>
+                  
+                 
+                    <p><b>written by <i class="fa-solid fa-envelope"></i></b>: {{post.author}}</p>
+                    <p><b>date</b>:{{post.created|timesince}} ago</p>
+                    
+                  <p class="card-text">
+                    {{post.content.capitalize|truncatewords:60}}
+                  </p>
+                  <a href="{% url 'singleblog' post.slug %}" class="btn btn-primary">Read more</a>
+                </div>
+                
+              </div>
+        </div>
+        <!-- <div class="col-md-4">
+              <div class="card" style="width: 18rem;">
+                <img src="{% static 'images/life2.jpg'%}"/>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  
+                    <p>written by: Andy</p>
+                    <p>date: 5.02.2023</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+              <div class="card" style="width: 18rem;">
+                <img src="{% static 'images/life2.jpg'%}"/>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                 
+                    <p>written by: Andy</p>
+                    <p>date: 5.02.2023</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div> -->
+        {% endfor %}
+    </div>
+    
+</div>
+
+<!-- Footer -->
+
+<footer
+class="text-center text-lg-start text-white"
+style="background-color:silver;"
+>
+<!-- Grid container -->
+<div class="container-fluid p-4 pb-0">
+<!-- Section: Links -->
+<section class="">
+<!--Grid row-->
+<div class="row">
+<!-- Grid column -->
+<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+  <h6 class="text-uppercase mb-4 font-weight-bold">
+    MyBlog
+  </h6>
+  <p>
+    Here you can use rows and columns to organize your footer
+    content. Lorem ipsum dolor sit amet, consectetur adipisicing
+    elit.
+  </p>
+</div>
+<!-- Grid column -->
+
+<hr class="w-100 clearfix d-md-none" />
+
+<!-- Grid column -->
+
+
+<!-- Grid column -->
+<hr class="w-100 clearfix d-md-none" />
+
+<!-- Grid column -->
+<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+  <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+  <p><i class="fas fa-home mr-3"></i> lokogoma, Abuja, NIGERIA</p>
+  <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+  <p><i class="fas fa-phone mr-3"></i> + 90 843 202 57</p>
+  <p><i class="fas fa-print mr-3"></i> + 90 601 219 76</p>
+</div>
+<!-- Grid column -->
+</div>
+<!--Grid row-->
+</section>
+<!-- Section: Links -->
+<div class="social-links">
+
+
+<hr class="my-3">
+
+<!-- Section: Copyright -->
+<section class="p-3 pt-0">
+<div class="row d-flex align-items-center">
+<!-- Grid column -->
+<div class="col-md-7 col-lg-8 text-center text-md-start">
+  <!-- Copyright -->
+  <div class="p-3">
+    © 2023 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/"
+       >Andy.com</a
+      >
+  </div>
+  <!-- Copyright -->
+</div>
+<!-- Grid column -->
+
+<!-- Grid column -->
+<div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+  <div class="social-links">
+    <a href="https://www.facebook.com/guardianng" target="_blank"><img src="https://guardian.ng/wp-content/themes/guardian2021/images/social-facebook.png" srcset="https://guardian.ng/wp-content/themes/guardian2021/images/social-facebook.png 1x,https://guardian.ng/wp-content/themes/guardian2021/images/social-facebook@2x.png 2x" alt="Facebook" width="30" height="30"></a><a href="https://www.instagram.com/guardiannigeria/" target="_blank"><img src="https://guardian.ng/wp-content/themes/guardian2021/images/social-instagram.png" srcset="https://guardian.ng/wp-content/themes/guardian2021/images/social-instagram.png 1x,https://guardian.ng/wp-content/themes/guardian2021/images/social-instagram@2x.png 2x" alt="Instagram" width="30" height="30"></a><a href="https://twitter.com/GuardianNigeria" target="_blank"><img src="https://guardian.ng/wp-content/themes/guardian2021/images/social-twitter.png" srcset="https://guardian.ng/wp-content/themes/guardian2021/images/social-twitter.png 1x,https://guardian.ng/wp-content/themes/guardian2021/images/social-twitter@2x.png 2x" alt="Twitter" width="30" height="30"></a><a href="https://t.me/theguardiannigeria" target="_blank"><img src="https://guardian.ng/wp-content/themes/guardian2021/images/social-telegram.png" srcset="https://guardian.ng/wp-content/themes/guardian2021/images/social-telegram.png 1x,https://guardian.ng/wp-content/themes/guardian2021/images/social-telegram@2x.png 2x" alt="Telegram" width="30" height="30"></a><a href="https://www.youtube.com/channel/UCjV6LnXFtXzWoYxnq-zIvXw" target="_blank"><img src="https://guardian.ng/wp-content/themes/guardian2021/images/social-youtube.png" srcset="https://guardian.ng/wp-content/themes/guardian2021/images/social-youtube.png 1x,https://guardian.ng/wp-content/themes/guardian2021/images/social-youtube@2x.png 2x" alt="YouTube" width="30" height="30"></a><a href="https://www.linkedin.com/company/guardian-newspapers-limited/" target="_blank"><img src="https://guardian.ng/wp-content/themes/guardian2021/images/social-linkedin.png" srcset="https://guardian.ng/wp-content/themes/guardian2021/images/social-linkedin.png 1x,https://guardian.ng/wp-content/themes/guardian2021/images/social-linkedin@2x.png 2x" alt="LinkedIn" width="30" height="30"></a>            </div>
+</div>
+<!-- Grid column -->
+</div>
+</section>
+<!-- Section: Copyright -->
+</div>
+<!-- Grid container -->
+</footer>
+<!-- Footer -->
+
+  {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'meta/base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+<div class="container" style="background-color: rgb(235, 227, 227);">
+
+    <div class="row">
+       <div class="col-md-10">
+        
+        {% if not searchedpost %}
+
+    <h5>search does not exists "{{search}}" </h5>
+
+        {% else %}
+       
+       {% for searched in searchedpost %}
+       <h1>you searched for "{{ searched.title }}"</h1>
+       <img src="{{searched.image.url}}" alt="">
+       <h2>{{searched.title}}</h2>
+       <p>{{ searched.content }}</p>
+       <h3>{{searched.blogcategory}}</h3>
+       <h5>{{searched.created}}</h5>
+       {% endfor %}
+       {% endif %}
+       </div>
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

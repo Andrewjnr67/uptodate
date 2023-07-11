@@ -1,0 +1,10 @@
+/* body{
+    background-image: url(../images/cook.jpg);
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-attachment: fixed;
+} */
+
+.nav-link{
+    font-size: 5px;
+}

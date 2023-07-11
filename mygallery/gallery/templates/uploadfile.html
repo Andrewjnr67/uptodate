@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+
+<form method="post" enctype="multipart/form-data">
+       
+    {% csrf_token %}
+
+    <hr><br>
+    
+ 
+    <input type="file" class="form-control" id="imageInputBox" aria-describedby="emailHelp" placeholder="images" required multiple><br>
+    <button type="submit" class="btn btn-secondary">submit</button>
+</form><br>
+
+</div>
+
+
+
+
+
+{% endblock %}
